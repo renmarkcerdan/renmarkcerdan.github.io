@@ -2564,7 +2564,7 @@ input, select, textarea {
 		text-align: left !important;
 	}
 
-	.work-item p, .work-item small {
+	.work-item p {
 		font-size: 0.8em;
 		line-height: 1.5em;
 		margin: 0;

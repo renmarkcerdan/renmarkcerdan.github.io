@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ammo Tracker — iPhone 17 Pro</title>
+    <meta name="description" content="24-Month Payment Tracker for iPhone 17 Pro">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ---- Custom Properties ---- */
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #181824;
+            --bg-input: #1a1a26;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --text: #e2e2ea;
+            --text-secondary: #8b8b9e;
+            --text-muted: #55556a;
+            --accent: #6366f1;
+            --accent-light: #a78bfa;
+            --green: #34d399;
+            --green-bg: rgba(52, 211, 153, 0.08);
+            --green-border: rgba(52, 211, 153, 0.2);
+            --red: #f87171;
+            --red-bg: rgba(248, 113, 113, 0.08);
+            --red-border: rgba(248, 113, 113, 0.2);
+            --yellow: #fbbf24;
+            --yellow-bg: rgba(251, 191, 36, 0.08);
+            --yellow-border: rgba(251, 191, 36, 0.2);
+            --gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        /* ---- Reset ---- */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        ::selection {
+            background: rgba(99, 102, 241, 0.3);
+            color: #fff;
+        }
+
+        /* ---- Layout ---- */
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+        }
+
+        /* ---- Header ---- */
+        .header {
+            text-align: center;
+            padding: 48px 0 40px;
+        }
+
+        .header-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 24px;
+            transition: color 0.2s;
+        }
+
+        .header-back:hover {
+            color: var(--accent-light);
+        }
+
+        .header-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem;
+            color: #fff;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .header-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .header-sub span {
+            font-family: var(--mono);
+            color: var(--accent-light);
+            font-size: 0.82rem;
+        }
+
+        /* ---- Progress Ring ---- */
+        .progress-section {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .ring-wrapper {
+            flex-shrink: 0;
+            position: relative;
+            width: 110px;
+            height: 110px;
+        }
+
+        .ring-wrapper svg {
+            transform: rotate(-90deg);
+            width: 110px;
+            height: 110px;
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.04);
+            stroke-width: 8;
+        }
+
+        .ring-fill {
+            fill: none;
+            stroke: url(#ringGrad);
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s ease;
+        }
+
+        .ring-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .ring-percent {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1;
+            display: block;
+        }
+
+        .ring-ptext {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+        }
+
+        .stat-box .label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .stat-box .value {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            font-family: var(--mono);
+        }
+
+        .stat-box .value.green {
+            color: var(--green);
+        }
+
+        .stat-box .value.red {
+            color: var(--red);
+        }
+
+        .stat-box .value.yellow {
+            color: var(--yellow);
+        }
+
+        /* ---- Admin Bar ---- */
+        .admin-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .admin-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .admin-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .admin-badge.viewer {
+            background: rgba(99, 102, 241, 0.08);
+            color: var(--accent-light);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .admin-badge.editor {
+            background: var(--green-bg);
+            color: var(--green);
+            border: 1px solid var(--green-border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.78rem;
+            font-weight: 600;
+            font-family: var(--font);
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--border-hover);
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .btn-accent {
+            background: var(--gradient);
+            color: #fff;
+            box-shadow: 0 2px 12px rgba(99, 102, 241, 0.25);
+        }
+
+        .btn-accent:hover {
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .btn-green {
+            background: var(--green-bg);
+            color: var(--green);
+            border: 1px solid var(--green-border);
+        }
+
+        .btn-green:hover {
+            background: rgba(52, 211, 153, 0.15);
+        }
+
+        .btn-red {
+            background: var(--red-bg);
+            color: var(--red);
+            border: 1px solid var(--red-border);
+        }
+
+        .btn-red:hover {
+            background: rgba(248, 113, 113, 0.15);
+        }
+
+        /* ---- Year Section ---- */
+        .year-section {
+            margin-bottom: 32px;
+        }
+
+        .year-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .year-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ---- Payment Row ---- */
+        .payment-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin-bottom: 8px;
+            transition: all 0.2s;
+        }
+
+        .payment-row:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+        }
+
+        .payment-row.paid {
+            border-color: var(--green-border);
+            background: rgba(52, 211, 153, 0.02);
+        }
+
+        .payment-row.overdue {
+            border-color: var(--red-border);
+            background: rgba(248, 113, 113, 0.02);
+        }
+
+        .payment-row.upcoming {
+            border-color: var(--yellow-border);
+            background: rgba(251, 191, 36, 0.02);
+        }
+
+        .pay-status-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+
+        .pay-status-icon.paid-icon {
+            background: var(--green-bg);
+            color: var(--green);
+            border: 1px solid var(--green-border);
+        }
+
+        .pay-status-icon.pending-icon {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        .pay-status-icon.overdue-icon {
+            background: var(--red-bg);
+            color: var(--red);
+            border: 1px solid var(--red-border);
+        }
+
+        .pay-status-icon.upcoming-icon {
+            background: var(--yellow-bg);
+            color: var(--yellow);
+            border: 1px solid var(--yellow-border);
+        }
+
+        .pay-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pay-month {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .pay-date {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-family: var(--mono);
+        }
+
+        .pay-amount {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .pay-amount .amount {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            font-family: var(--mono);
+        }
+
+        .pay-amount .paid-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pay-amount .paid-label.yes {
+            color: var(--green);
+        }
+
+        .pay-amount .paid-label.no {
+            color: var(--text-muted);
+        }
+
+        .pay-amount .paid-label.overdue-text {
+            color: var(--red);
+        }
+
+        .pay-amount .paid-label.upcoming-text {
+            color: var(--yellow);
+        }
+
+        .pay-actions {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .pay-actions .btn {
+            padding: 6px 10px;
+            font-size: 0.7rem;
+        }
+
+        .pay-paid-info {
+            font-size: 0.68rem;
+            color: var(--green);
+            font-family: var(--mono);
+            margin-top: 2px;
+        }
+
+        /* ---- Notes Section ---- */
+        .notes-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        .notes-section h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .notes-section h3 i {
+            color: var(--accent);
+        }
+
+        .notes-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            white-space: pre-wrap;
+            line-height: 1.7;
+        }
+
+        .notes-textarea {
+            width: 100%;
+            min-height: 80px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 0.85rem;
+            padding: 12px;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .notes-textarea:focus {
+            border-color: var(--accent);
+        }
+
+        /* ---- Modal ---- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            max-width: 400px;
+            width: 100%;
+            animation: modalIn 0.25s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .modal p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 0.9rem;
+            outline: none;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .modal-input:focus {
+            border-color: var(--accent);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .modal-error {
+            font-size: 0.75rem;
+            color: var(--red);
+            margin-bottom: 12px;
+            display: none;
+        }
+
+        /* ---- Pay Modal ---- */
+        .pay-modal-date {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 0.9rem;
+            outline: none;
+            margin-bottom: 12px;
+            transition: border-color 0.2s;
+            color-scheme: dark;
+        }
+
+        .pay-modal-date:focus {
+            border-color: var(--accent);
+        }
+
+        .pay-modal-amount {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            outline: none;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .pay-modal-amount:focus {
+            border-color: var(--accent);
+        }
+
+        .field-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        /* ---- Footer ---- */
+        .tracker-footer {
+            text-align: center;
+            padding: 32px 0 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .tracker-footer p {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        /* ---- Toast ---- */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--green-border);
+            border-radius: var(--radius-sm);
+            padding: 12px 20px;
+            color: var(--green);
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 2000;
+            animation: toastIn 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .toast.error {
+            border-color: var(--red-border);
+            color: var(--red);
+        }
+
+        @keyframes toastIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 640px) {
+            .page {
+                padding: 16px 14px 48px;
+            }
+
+            .header {
+                padding: 32px 0 28px;
+            }
+
+            .progress-section {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+
+            .payment-row {
+                flex-wrap: wrap;
+                padding: 14px 16px;
+                gap: 10px;
+            }
+
+            .pay-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+
+            .admin-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hide admin elements when not in admin mode */
+        body:not(.admin-mode) .admin-only {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Password Modal -->
+    <div class="modal-overlay" id="passwordModal">
+        <div class="modal">
+            <h3><i class="fas fa-lock" style="color:var(--accent);margin-right:6px;"></i> Admin Access</h3>
+            <p>Enter the admin password to edit payments.</p>
+            <div class="modal-error" id="passError">Incorrect password. Please try again.</div>
+            <input type="password" class="modal-input" id="passwordInput" placeholder="Enter password..."
+                autocomplete="off">
+            <div class="modal-actions">
+                <button class="btn btn-ghost" onclick="closePasswordModal()">Cancel</button>
+                <button class="btn btn-accent" onclick="submitPassword()">
+                    <i class="fas fa-unlock"></i> Unlock
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark Paid Modal -->
+    <div class="modal-overlay" id="payModal">
+        <div class="modal">
+            <h3><i class="fas fa-check-circle" style="color:var(--green);margin-right:6px;"></i> Mark as Paid</h3>
+            <p id="payModalTitle">Month #1 — Apr 20, 2026</p>
+            <label class="field-label">Date Paid</label>
+            <input type="date" class="pay-modal-date" id="payDate">
+            <label class="field-label">Amount Paid (₱)</label>
+            <input type="number" class="pay-modal-amount" id="payAmount" step="0.01">
+            <div class="modal-actions">
+                <button class="btn btn-ghost" onclick="closePayModal()">Cancel</button>
+                <button class="btn btn-green" onclick="confirmPay()">
+                    <i class="fas fa-check"></i> Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <a href="../" class="header-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <div class="header-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h1>24-Month Ammo Tracker</h1>
+            <p class="header-sub">
+                iPhone 17 Pro &nbsp;·&nbsp; Monthly: <span>₱3,448.75</span> &nbsp;·&nbsp; Start: <span>Apr 20,
+                    2026</span>
+            </p>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-section">
+            <div class="ring-wrapper">
+                <svg viewBox="0 0 110 110">
+                    <defs>
+                        <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6366f1" />
+                            <stop offset="100%" stop-color="#34d399" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="ring-bg" cx="55" cy="55" r="46" />
+                    <circle class="ring-fill" id="ringFill" cx="55" cy="55" r="46" stroke-dasharray="289.03"
+                        stroke-dashoffset="289.03" />
+                </svg>
+                <div class="ring-label">
+                    <span class="ring-percent" id="ringPercent">0%</span>
+                    <span class="ring-ptext">Paid</span>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="label">Total Paid</div>
+                    <div class="value green" id="statPaid">₱0.00</div>
+                </div>
+                <div class="stat-box">
+                    <div class="label">Remaining</div>
+                    <div class="value red" id="statRemaining">₱82,770.00</div>
+                </div>
+                <div class="stat-box">
+                    <div class="label">Months Paid</div>
+                    <div class="value" id="statMonths">0 / 24</div>
+                </div>
+                <div class="stat-box">
+                    <div class="label">Next Due</div>
+                    <div class="value yellow" id="statNext">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Bar -->
+        <div class="admin-bar">
+            <div class="admin-bar-left">
+                <span class="admin-badge viewer" id="modeBadge">
+                    <i class="fas fa-eye"></i> View Mode
+                </span>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button class="btn btn-ghost" id="loginBtn" onclick="openPasswordModal()">
+                    <i class="fas fa-lock"></i> Admin Login
+                </button>
+                <button class="btn btn-red admin-only" id="logoutBtn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+                <button class="btn btn-accent admin-only" onclick="downloadJSON()">
+                    <i class="fas fa-download"></i> Export JSON
+                </button>
+            </div>
+        </div>
+
+        <!-- Payments List -->
+        <div id="paymentsList"></div>
+
+        <!-- Notes -->
+        <div class="notes-section">
+            <h3><i class="fas fa-sticky-note"></i> Notes</h3>
+            <div id="notesView" class="notes-text">No notes yet.</div>
+            <textarea id="notesEdit" class="notes-textarea admin-only" placeholder="Add notes here..."
+                oninput="updateNotes()"></textarea>
+        </div>
+
+        <!-- Footer -->
+        <div class="tracker-footer">
+            <p>Ammo Tracker &copy; 2026 &nbsp;</p>
+        </div>
+    </div>
+
+    <script>
+        // ---- Config ----
+        const PASS_HASH = 'f9c655065f99ac44e3e1cefc04c85ca4766cd5d8e93e9dcdceee1fe2a81e3985';
+        let data = null;
+        let isAdmin = false;
+        let currentPayIndex = -1;
+
+        // ---- Default Data (embedded fallback for file:// protocol) ----
+        const DEFAULT_DATA = {
+            title: "iPhone 17 Pro",
+            startDate: "2026-04-20",
+            monthlyAmmo: 3448.75,
+            totalMonths: 24,
+            notes: "",
+            payments: [
+                { month: 1, dueDate: "2026-04-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 2, dueDate: "2026-05-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 3, dueDate: "2026-06-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 4, dueDate: "2026-07-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 5, dueDate: "2026-08-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 6, dueDate: "2026-09-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 7, dueDate: "2026-10-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 8, dueDate: "2026-11-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 9, dueDate: "2026-12-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 10, dueDate: "2027-01-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 11, dueDate: "2027-02-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 12, dueDate: "2027-03-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 13, dueDate: "2027-04-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 14, dueDate: "2027-05-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 15, dueDate: "2027-06-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 16, dueDate: "2027-07-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 17, dueDate: "2027-08-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 18, dueDate: "2027-09-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 19, dueDate: "2027-10-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 20, dueDate: "2027-11-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 21, dueDate: "2027-12-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 22, dueDate: "2028-01-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 23, dueDate: "2028-02-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null },
+                { month: 24, dueDate: "2028-03-20", amount: 3448.75, paid: false, paidDate: null, paidAmount: null }
+            ]
+        };
+
+        // ---- Init ----
+        async function init() {
+            // 1. Try localStorage first (admin edits persist here)
+            const localData = localStorage.getItem('ammo-payments');
+            if (localData) {
+                data = JSON.parse(localData);
+            } else {
+                // 2. Try fetching payments.json (works on GitHub Pages)
+                try {
+                    const resp = await fetch('payments.json?' + Date.now());
+                    if (resp.ok) {
+                        data = await resp.json();
+                    } else {
+                        throw new Error('Fetch failed');
+                    }
+                } catch (e) {
+                    // 3. Use embedded default data (works on file://)
+                    data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+                }
+            }
+
+            // Check if admin session is active
+            if (sessionStorage.getItem('ammo-admin') === 'true') {
+                isAdmin = true;
+                document.body.classList.add('admin-mode');
+                updateModeBadge();
+            }
+
+            render();
+        }
+
+        // ---- Render ----
+        function render() {
+            renderProgress();
+            renderPayments();
+            renderNotes();
+        }
+
+        function renderProgress() {
+            const paid = data.payments.filter(p => p.paid);
+            const paidCount = paid.length;
+            const total = data.payments.length;
+            const paidAmount = paid.reduce((s, p) => s + (p.paidAmount || p.amount), 0);
+            const totalAmount = data.payments.reduce((s, p) => s + p.amount, 0);
+            const remaining = totalAmount - paidAmount;
+            const percent = total > 0 ? Math.round((paidCount / total) * 100) : 0;
+
+            // Ring
+            const circ = 2 * Math.PI * 46; // ~289.03
+            const offset = circ - (circ * percent / 100);
+            document.getElementById('ringFill').style.strokeDashoffset = offset;
+            document.getElementById('ringPercent').textContent = percent + '%';
+
+            // Stats
+            document.getElementById('statPaid').textContent = formatCurrency(paidAmount);
+            document.getElementById('statRemaining').textContent = formatCurrency(remaining);
+            document.getElementById('statMonths').textContent = paidCount + ' / ' + total;
+
+            // Next due
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const nextDue = data.payments.find(p => !p.paid);
+            if (nextDue) {
+                document.getElementById('statNext').textContent = formatShortDate(nextDue.dueDate);
+            } else {
+                document.getElementById('statNext').textContent = 'All Paid! 🎉';
+                document.getElementById('statNext').className = 'value green';
+            }
+        }
+
+        function renderPayments() {
+            const container = document.getElementById('paymentsList');
+            container.innerHTML = '';
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Group by year
+            const years = {};
+            data.payments.forEach((p, i) => {
+                const due = new Date(p.dueDate);
+                const startYear = new Date(data.startDate).getFullYear();
+                const yearNum = due.getFullYear() <= startYear ? 1 :
+                    (due.getMonth() >= new Date(data.startDate).getMonth() &&
+                        due.getFullYear() === startYear + 1) ? 2 :
+                        due.getFullYear() === startYear ? 1 : 2;
+
+                // Simpler: months 1-12 = Year 1, months 13-24 = Year 2
+                const yr = p.month <= 12 ? 1 : 2;
+                if (!years[yr]) years[yr] = [];
+                years[yr].push({ ...p, index: i });
+            });
+
+            Object.keys(years).sort().forEach(yr => {
+                const yearDiv = document.createElement('div');
+                yearDiv.className = 'year-section';
+
+                const label = document.createElement('div');
+                label.className = 'year-label';
+                label.textContent = 'Year ' + yr;
+                yearDiv.appendChild(label);
+
+                years[yr].forEach(p => {
+                    const dueDate = new Date(p.dueDate);
+                    dueDate.setHours(0, 0, 0, 0);
+                    const isOverdue = !p.paid && dueDate < today;
+                    const isUpcoming = !p.paid && dueDate >= today && dueDate <= new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+                    const row = document.createElement('div');
+                    row.className = 'payment-row' +
+                        (p.paid ? ' paid' : '') +
+                        (isOverdue ? ' overdue' : '') +
+                        (isUpcoming && !isOverdue ? ' upcoming' : '');
+
+                    const iconClass = p.paid ? 'paid-icon' :
+                        isOverdue ? 'overdue-icon' :
+                            isUpcoming ? 'upcoming-icon' : 'pending-icon';
+
+                    const iconFa = p.paid ? 'fa-check' :
+                        isOverdue ? 'fa-exclamation' :
+                            isUpcoming ? 'fa-clock' : 'fa-circle';
+
+                    const statusText = p.paid ? 'Paid' :
+                        isOverdue ? 'Overdue' :
+                            isUpcoming ? 'Due Soon' : 'Pending';
+
+                    const statusClass = p.paid ? 'yes' :
+                        isOverdue ? 'overdue-text' :
+                            isUpcoming ? 'upcoming-text' : 'no';
+
+                    let paidInfo = '';
+                    if (p.paid && p.paidDate) {
+                        paidInfo = `<div class="pay-paid-info">Paid ${formatShortDate(p.paidDate)}${p.paidAmount && p.paidAmount !== p.amount ? ' · ' + formatCurrency(p.paidAmount) : ''}</div>`;
+                    }
+
+                    let actions = '';
+                    if (isAdmin) {
+                        if (!p.paid) {
+                            actions = `<div class="pay-actions admin-only">
+                                <button class="btn btn-green" onclick="openPayModal(${p.index})">
+                                    <i class="fas fa-check"></i> Pay
+                                </button>
+                            </div>`;
+                        } else {
+                            actions = `<div class="pay-actions admin-only">
+                                <button class="btn btn-ghost" onclick="unmarkPaid(${p.index})">
+                                    <i class="fas fa-undo"></i> Undo
+                                </button>
+                            </div>`;
+                        }
+                    }
+
+                    row.innerHTML = `
+                        <div class="pay-status-icon ${iconClass}">
+                            <i class="fas ${iconFa}"></i>
+                        </div>
+                        <div class="pay-info">
+                            <div class="pay-month">Month #${p.month}</div>
+                            <div class="pay-date">Due: ${formatLongDate(p.dueDate)}</div>
+                            ${paidInfo}
+                        </div>
+                        <div class="pay-amount">
+                            <div class="amount">${formatCurrency(p.amount)}</div>
+                            <div class="paid-label ${statusClass}">${statusText}</div>
+                        </div>
+                        ${actions}
+                    `;
+
+                    yearDiv.appendChild(row);
+                });
+
+                container.appendChild(yearDiv);
+            });
+        }
+
+        function renderNotes() {
+            const view = document.getElementById('notesView');
+            const edit = document.getElementById('notesEdit');
+            view.textContent = data.notes || 'No notes yet.';
+            edit.value = data.notes || '';
+        }
+
+        // ---- Admin / Password ----
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        function openPasswordModal() {
+            document.getElementById('passwordModal').classList.add('active');
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('passError').style.display = 'none';
+            setTimeout(() => document.getElementById('passwordInput').focus(), 100);
+        }
+
+        function closePasswordModal() {
+            document.getElementById('passwordModal').classList.remove('active');
+        }
+
+        async function submitPassword() {
+            const pass = document.getElementById('passwordInput').value;
+            const hash = await hashPassword(pass);
+
+            if (hash === PASS_HASH) {
+                isAdmin = true;
+                sessionStorage.setItem('ammo-admin', 'true');
+                document.body.classList.add('admin-mode');
+                updateModeBadge();
+                closePasswordModal();
+                render();
+                showToast('Admin mode activated');
+            } else {
+                document.getElementById('passError').style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+            }
+        }
+
+        // Handle Enter key in password input
+        document.getElementById('passwordInput').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') submitPassword();
+        });
+
+        function logout() {
+            isAdmin = false;
+            sessionStorage.removeItem('ammo-admin');
+            document.body.classList.remove('admin-mode');
+            updateModeBadge();
+            render();
+            showToast('Logged out');
+        }
+
+        function updateModeBadge() {
+            const badge = document.getElementById('modeBadge');
+            const loginBtn = document.getElementById('loginBtn');
+            if (isAdmin) {
+                badge.className = 'admin-badge editor';
+                badge.innerHTML = '<i class="fas fa-pen"></i> Edit Mode';
+                loginBtn.style.display = 'none';
+            } else {
+                badge.className = 'admin-badge viewer';
+                badge.innerHTML = '<i class="fas fa-eye"></i> View Mode';
+                loginBtn.style.display = '';
+            }
+        }
+
+        // ---- Pay / Unpay ----
+        function openPayModal(index) {
+            currentPayIndex = index;
+            const p = data.payments[index];
+            document.getElementById('payModalTitle').textContent =
+                `Month #${p.month} — ${formatLongDate(p.dueDate)}`;
+            document.getElementById('payDate').value = new Date().toISOString().split('T')[0];
+            document.getElementById('payAmount').value = p.amount;
+            document.getElementById('payModal').classList.add('active');
+        }
+
+        function closePayModal() {
+            document.getElementById('payModal').classList.remove('active');
+            currentPayIndex = -1;
+        }
+
+        function confirmPay() {
+            if (currentPayIndex < 0) return;
+            const p = data.payments[currentPayIndex];
+            p.paid = true;
+            p.paidDate = document.getElementById('payDate').value;
+            p.paidAmount = parseFloat(document.getElementById('payAmount').value) || p.amount;
+            saveLocal();
+            closePayModal();
+            render();
+            showToast(`Month #${p.month} marked as paid`);
+        }
+
+        function unmarkPaid(index) {
+            const p = data.payments[index];
+            p.paid = false;
+            p.paidDate = null;
+            p.paidAmount = null;
+            saveLocal();
+            render();
+            showToast(`Month #${p.month} unmarked`);
+        }
+
+        function updateNotes() {
+            data.notes = document.getElementById('notesEdit').value;
+            document.getElementById('notesView').textContent = data.notes || 'No notes yet.';
+            saveLocal();
+        }
+
+        // ---- Storage ----
+        function saveLocal() {
+            localStorage.setItem('ammo-payments', JSON.stringify(data));
+        }
+
+        // ---- Export ----
+        function downloadJSON() {
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'payments.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('JSON downloaded — replace payments.json and push to GitHub');
+        }
+
+        // ---- Helpers ----
+        function formatCurrency(amount) {
+            return '₱' + amount.toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function formatLongDate(dateStr) {
+            const d = new Date(dateStr + 'T00:00:00');
+            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        function formatShortDate(dateStr) {
+            const d = new Date(dateStr + 'T00:00:00');
+            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        }
+
+        // ---- Toast ----
+        function showToast(msg, isError = false) {
+            const old = document.querySelector('.toast');
+            if (old) old.remove();
+
+            const toast = document.createElement('div');
+            toast.className = 'toast' + (isError ? ' error' : '');
+            toast.innerHTML = `<i class="fas ${isError ? 'fa-times-circle' : 'fa-check-circle'}"></i> ${msg}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3500);
+        }
+
+        // ---- Start ----
+        init();
+    </script>
+</body>
+
+</html>

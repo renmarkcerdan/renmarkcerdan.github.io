@@ -1,0 +1,33 @@
+{
+  "title": "iPhone 17 Pro",
+  "startDate": "2026-04-20",
+  "monthlyAmmo": 3448.75,
+  "totalMonths": 24,
+  "notes": "",
+  "payments": [
+    { "month": 1, "dueDate": "2026-04-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 2, "dueDate": "2026-05-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 3, "dueDate": "2026-06-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 4, "dueDate": "2026-07-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 5, "dueDate": "2026-08-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 6, "dueDate": "2026-09-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 7, "dueDate": "2026-10-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 8, "dueDate": "2026-11-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 9, "dueDate": "2026-12-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 10, "dueDate": "2027-01-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 11, "dueDate": "2027-02-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 12, "dueDate": "2027-03-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 13, "dueDate": "2027-04-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 14, "dueDate": "2027-05-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 15, "dueDate": "2027-06-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 16, "dueDate": "2027-07-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 17, "dueDate": "2027-08-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 18, "dueDate": "2027-09-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 19, "dueDate": "2027-10-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 20, "dueDate": "2027-11-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 21, "dueDate": "2027-12-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 22, "dueDate": "2028-01-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 23, "dueDate": "2028-02-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 24, "dueDate": "2028-03-20", "amount": 3448.75, "paid": false, "paidDate": null, "paidAmount": null }
+  ]
+}

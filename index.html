@@ -1,130 +1,562 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Ren Mark Almojera Cerdan</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ren Mark Cerdan — Software Developer</title>
+    <meta name="description" content="Software Developer specializing in PHP, Laravel, and scalable web applications. Building robust solutions that drive real business value.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="avatar" /></a>
-					<h1><strong>I am Ren</strong>, a Backend<br /> Web Developer</h1>
-					<ul class="icons">
-						<li><a target="_new" href="https://github.com/renmarkcerdan" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a target="_new" href="https://mail.google.com/mail/?view=cm&fs=1&to=renmarkalmojeracerdan@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</div>
-			</header>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">&lt;RC /&gt;</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-		<!-- Main -->
-			<div id="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                Available for opportunities
+            </div>
+            <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text">Ren Mark</span>
+            </h1>
+            <p class="hero-subtitle">Software Developer</p>
+            <p class="hero-description">
+                Turning complex problems into simple, reliable code.<br>
+                Focused on scalable solutions with PHP, Laravel & Flutter.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-code"></i> View Projects
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-paper-plane"></i> Get in Touch
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Side Projects</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-avatar-wrapper">
+            <div class="avatar-glow"></div>
+            <img src="images/avatar.jpg" alt="Ren Mark Cerdan" class="hero-avatar">
+        </div>
+    </section>
 
-			<!-- One -->
-				<section id="one">
-					<h2>About me</h2>
-					<p>As a passionate and versatile Software Developer, I specialize in building robust web applications using
-						PHP (CodeIgniter 3/4, CakePHP 2), JavaScript, jQuery, MySQL, HTML, and CSS. With hands-on experience
-						in Git/GitHub and VS Code, I’m comfortable navigating the full development lifecycle—from turning
-						business needs into clean, maintainable code to deploying features that deliver real value.
-						I’m known for being a fast learner, a problem solver, and a team player who adapts quickly in fast-paced
-						environments. Whether I’m working with legacy code or designing new features from scratch, I focus on
-						writing efficient, scalable code that meets user needs and exceeds expectations.
-						I thrive in collaborative settings where knowledge-sharing and continuous improvement are part of
-						the culture. Beyond just coding, I care about the why behind the work—solving real-world problems,
-						improving user experiences, and helping teams move faster without sacrificing quality.
-						Let’s build something great together.</p>
-				</section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span> About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        As a passionate and versatile Software Developer, I specialize in building and optimizing robust web applications using 
+                        <strong>PHP</strong> (CodeIgniter 3/4, CakePHP 2, <strong>Laravel 12</strong>), JavaScript, jQuery, MySQL, HTML, and CSS. 
+                        I have hands-on experience with Git/GitHub, VS Code, and modern development practices that ensure clean, maintainable, and scalable code.
+                    </p>
+                    <p>
+                        Currently, I'm part of a development team leading the <strong>migration of a legacy HRIS to Laravel 12</strong>, 
+                        leveraging API integrations and a microservices architecture to improve scalability, performance, and maintainability. 
+                        My work focuses on transforming complex requirements into efficient, user-centered software solutions that drive measurable results.
+                    </p>
+                    <p>
+                        I believe great software isn't just about code — it's about understanding people, solving problems, and continuously improving. 
+                        I'm always eager to learn new technologies, share ideas, and build solutions that make an impact.
+                    </p>
+                </div>
+                <div class="about-details">
+                    <div class="detail-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Education</h4>
+                        <p class="detail-main">BS Information Technology</p>
+                        <p class="detail-sub">Colegio de Dagupan</p>
+                        <p class="detail-sub">2011 – 2015</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p class="detail-main">Dagupan City</p>
+                        <p class="detail-sub">Pangasinan, Philippines</p>
+                        <p class="detail-sub">Willing to relocate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Two -->
-				<section id="two">
-					<h2>Recent Work</h2>
-					<div class="row">
-						<article class="col-6 col-12-xsmall work-item">
-							<img src="images/thumbs/dai.svg" alt="logo" width="50%" />
-							<h3>Dona Alejandra Inc., Quezon City — Software Developer III</h3>
-							<p><b>September 2024 - PRESENT (Employed)</b></p>
-							<p> • Led development and maintenance of the core HRIS platform (PHP 8, CakePHP, MySQL, jQuery/JS), delivering six major features and enhancements that boosted system performance by ~25%.</p>	
-							<p> • Collaborated with cross-functional teams (HR, design, QA) to translate complex requirements into scalable software solutions, ensuring on-time releases with zero critical post-release issues.</p>	
-							<p> • Optimized the legacy codebase through strategic refactoring, reducing average page load times by 30% and significantly improving application responsiveness.</p>	
-							<p> • Implemented user-driven interface improvements and workflow automation, boosting user satisfaction and reducing manual HR processing time by 40%.</p>	
-							<p> • Mentored junior developers on CakePHP best practices and coding standards, elevating team productivity and code quality.</p>	
-							<p> • Proactively adopted new technologies (PHP 8 upgrades, automated testing frameworks) to enhance HRIS reliability, resulting in a 50% reduction in system errors and accelerated deployment cycles.</p>
-						</article>
-						<article class="col-6 col-12-xsmall work-item">
-							<img src="images/thumbs/bstech.svg" alt="logo" width="50%" />
-							<h3>BStech Solutions, Calasiao, Pangasinan — Web Developer</h3>
-							<p><b>October 2018 - October 2019 (Freelance)</b></p>
-							<p><b>October 2019 - September 2024</b></p>
-							<p> • Developed and maintained 10+ custom web-based systems using CodeIgniter, PHP, HTML4/5, CSS, and JavaScript, streamlining operations for clients across retail, logistics, and HR.</p>	
-							<p> • Improved system performance by up to 35% through backend optimizations and front-end code refactoring, enhancing user experience and reducing load times.</p>	
-							<p> • Reduced client-reported bugs by 40% year-over-year through proactive debugging and unit testing.</p>	
-							<p> • Upgraded outdated UI components to responsive, modern layouts, resulting in a 25% increase in user satisfaction (based on internal client feedback).</p>	
-							<p> • Implemented version control with Git/GitHub to improve team collaboration and reduce deployment errors.</p>	
-							<p> • Delivered projects 20% faster than initial estimates by automating repetitive tasks and optimizing development workflows.</p>	
-						</article>
-						<article class="col-6 col-12-xsmall work-item">
-							<img src="images/thumbs/dti.png" alt="logo" width="50%"/>
-							<h3>Department of Trade and Industry, Dagupan City, Pangasinan — Office Staff</h3>
-							<p><b>October 2017 - February 2019</b></p>
-							<p> • Maintained and audited a centralized database of business names, ensuring 100% data accuracy and streamlining retrieval through updated filing procedures.</p>	
-							<p> • Processed business name registration and renewal applications, optimizing workflow to accelerate processing times and improve accuracy, ensuring timely approvals.</p>	
-							<p> • Designed professional seminar tarpaulins and marketing materials using Adobe Photoshop, creating on-brand visuals to ensure consistency with departmental branding and boost event attendance.</p>
-						</article>
-						<article class="col-6 col-12-xsmall work-item">
-							<img src="images/thumbs/honda.png" alt="logo" width="100%" />
-							<h3>Honda Cars Pangasinan Inc., Calasiao, Pangasinan — Junior Programmer</h3>
-							<p><b>February 2016 - October 2016</b></p>
-							<p>• Upgraded and maintained the company’s internal Accounting Information System using PowerBuilder and SQL, improving data accuracy and reducing monthly reporting errors by 30%.</p>							
-							<p>• Optimized database queries and application logic, reducing system lag and boosting efficiency for end-users in accounting and finance departments.</p>								
-							<p>• Streamlined data handling processes, resulting in a 20% decrease in processing time for financial transactions and reconciliations.</p>								
-							<p>• Collaborated with the IT and accounting teams to identify system bottlenecks and implement solutions that enhanced reporting reliability.</p>
-						</article>
-						<article class="col-6 col-12-xsmall work-item">
-							<img src="images/thumbs/psa.png" alt="logo" width="100%" />
-							<h3>Philippine Statistics Authority, Calasiao, Pangasinan — Team Supervisor</h3>
-							<p><b>August 2015 - October 2015</b></p>
-							<p> • Supervised a team of 12 enumerators during the 2015 Population Census (POPCEN), ensuring 100% coverage and data accuracy within assigned areas.</p>	
-							<p> • Achieved 100% on-time submission of field reports and census data through effective scheduling, daily progress monitoring, and hands-on support.</p>	
-							<p> • Conducted spot-checks and quality reviews, reducing data discrepancies by 35% and ensuring compliance with national census protocols.</p>	
-							<p> • Served as the primary liaison between field teams and central office, facilitating smooth communication and issue resolution.</p>
-						</article>
-						<article class="col-6 col-12-xsmall work-item">
-							<img src="images/thumbs/dswd.png" alt="logo" width="50%" />
-							<h3>Department of Social Welfare and Development, Dagupan City, Pangasinan — Enumerator</h3>
-							<p><b>May 2015 - July 2015</b></p>
-							<p> • Conducted detailed household interviews using the Listahanan software, successfully collecting data from over 300 families to support national poverty targeting initiatives.</p>	
-							<p> • Ensured 99% data accuracy by cross-verifying entries and resolving inconsistencies on-site, contributing to the integrity of regional social welfare databases.</p>	
-							<p> • Streamlined data encoding and summary preparation, reducing reporting time by 20% and enabling faster evaluation by regional analysts.</p>
-						</article>
-					</div>
-				</section>
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span> Work Experience
+            </h2>
+            <div class="timeline">
+                <!-- Dona Alejandra -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot active"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Software Developer III</h3>
+                                <p class="exp-company">
+                                    <img src="images/thumbs/dai.svg" alt="DAI" class="company-logo">
+                                    Dona Alejandra Inc. — Quezon City
+                                </p>
+                            </div>
+                            <span class="exp-date">
+                                <i class="fas fa-calendar"></i> Sep 2024 – Present
+                            </span>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Led development and maintenance of the company's core HRIS platform using PHP 8, CakePHP, MySQL, jQuery, and JavaScript, delivering six major features that improved system performance by 25%.</li>
+                            <li>Spearheading the migration of the legacy HRIS to Laravel 12, leveraging API integrations and a microservices architecture to enhance scalability, security, and system flexibility.</li>
+                            <li>Collaborated with cross-functional teams (Project Manager, BA, QA) to translate complex requirements into scalable, maintainable solutions — achieving zero critical post-release issues.</li>
+                            <li>Optimized and refactored legacy code, reducing average page load times by 30% and improving application responsiveness across multiple modules.</li>
+                            <li>Designed and implemented user-driven UI enhancements and workflow automations, cutting manual HR processing time by 40%.</li>
+                            <li>Mentored junior developers on CakePHP and modern PHP practices, improving code quality, consistency, and overall team velocity.</li>
+                            <li>Proactively adopted modern tools and technologies including automated testing frameworks and CI/CD pipelines — resulting in a 50% reduction in system errors and faster deployment cycles.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag">PHP 8</span>
+                            <span class="tag">CakePHP</span>
+                            <span class="tag">Laravel 12</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">jQuery</span>
+                            <span class="tag">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- Three -->
-				<section id="three">
-					<h2>Get In Touch</h2>
-					<div class="row">
-						<div class="col-12">
-							<ul class="labeled-icons">
-								<li>
-									<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-									Block 1 Lot 1 Camella Heights, Minien West, Santa Barbara, Pangasinan, 2419
-								</li>
-								<li>
-									<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-									+63976 022 9627
-								</li>
-								<li>
-									<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-									<a href="https://mail.google.com/mail/?view=cm&fs=1&to=renmarkalmojeracerdan@gmail.com">renmarkalmojeracerdan@gmail.com</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-			</div>
-	</body>
+                <!-- BStech -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Web Developer</h3>
+                                <p class="exp-company">
+                                    <img src="images/thumbs/bstech.svg" alt="BStech" class="company-logo">
+                                    BStech Solutions — Calasiao, Pangasinan
+                                </p>
+                            </div>
+                            <span class="exp-date">
+                                <i class="fas fa-calendar"></i> Oct 2019 – Sep 2024
+                            </span>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Developed and maintained 10+ custom web-based systems using CodeIgniter, PHP, HTML4/5, CSS, and JavaScript, streamlining operations for clients across retail, logistics, and HR.</li>
+                            <li>Improved system performance by up to 35% through backend optimizations and front-end code refactoring.</li>
+                            <li>Reduced client-reported bugs by 40% year-over-year through proactive debugging and unit testing.</li>
+                            <li>Upgraded outdated UI components to responsive, modern layouts, resulting in a 25% increase in user satisfaction.</li>
+                            <li>Implemented version control with Git/GitHub to improve team collaboration and reduce deployment errors.</li>
+                            <li>Delivered projects 20% faster than initial estimates by automating repetitive tasks and optimizing workflows.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag">CodeIgniter</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BStech Freelance -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Web Developer <span class="badge-freelance">Freelance</span></h3>
+                                <p class="exp-company">
+                                    <img src="images/thumbs/bstech.svg" alt="BStech" class="company-logo">
+                                    BStech Solutions — Calasiao, Pangasinan
+                                </p>
+                            </div>
+                            <span class="exp-date">
+                                <i class="fas fa-calendar"></i> Oct 2018 – Oct 2019
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DTI -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Office Staff</h3>
+                                <p class="exp-company">
+                                    <img src="images/thumbs/dti.png" alt="DTI" class="company-logo">
+                                    Department of Trade and Industry — Dagupan City
+                                </p>
+                            </div>
+                            <span class="exp-date">
+                                <i class="fas fa-calendar"></i> Oct 2017 – Feb 2019
+                            </span>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Maintained and audited a centralized database of business names, ensuring 100% data accuracy.</li>
+                            <li>Processed business name registration and renewal applications, optimizing workflow for timely approvals.</li>
+                            <li>Designed professional seminar tarpaulins and marketing materials using Adobe Photoshop.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Honda -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Junior Programmer</h3>
+                                <p class="exp-company">
+                                    <img src="images/thumbs/honda.png" alt="Honda" class="company-logo">
+                                    Honda Cars Pangasinan Inc. — Calasiao
+                                </p>
+                            </div>
+                            <span class="exp-date">
+                                <i class="fas fa-calendar"></i> Feb 2016 – Oct 2016
+                            </span>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Upgraded and maintained the company's internal Accounting Information System using PowerBuilder and SQL, reducing monthly reporting errors by 30%.</li>
+                            <li>Optimized database queries and application logic, reducing system lag and boosting efficiency.</li>
+                            <li>Streamlined data handling processes, resulting in a 20% decrease in processing time for financial transactions.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag">PowerBuilder</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PSA -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Team Supervisor</h3>
+                                <p class="exp-company">
+                                    <img src="images/thumbs/psa.png" alt="PSA" class="company-logo">
+                                    Philippine Statistics Authority — Calasiao
+                                </p>
+                            </div>
+                            <span class="exp-date">
+                                <i class="fas fa-calendar"></i> Aug 2015 – Oct 2015
+                            </span>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Supervised a team of 12 enumerators during the 2015 POPCEN, ensuring 100% coverage and data accuracy.</li>
+                            <li>Achieved 100% on-time submission of field reports through effective scheduling and daily progress monitoring.</li>
+                            <li>Conducted spot-checks and quality reviews, reducing data discrepancies by 35%.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DSWD -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Enumerator</h3>
+                                <p class="exp-company">
+                                    <img src="images/thumbs/dswd.png" alt="DSWD" class="company-logo">
+                                    Department of Social Welfare and Development — San Fernando
+                                </p>
+                            </div>
+                            <span class="exp-date">
+                                <i class="fas fa-calendar"></i> May 2015 – Jul 2015
+                            </span>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Conducted detailed household interviews using the Listahanan software, collecting data from over 300 families.</li>
+                            <li>Ensured 99% data accuracy by cross-verifying entries and resolving inconsistencies on-site.</li>
+                            <li>Streamlined data encoding, reducing reporting time by 20%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span> Side Projects
+            </h2>
+            <p class="section-subtitle">Personal projects I've built to explore new technologies and solve real-world problems.</p>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="project-badge laravel">Laravel 12+</div>
+                    <h3>Laundry Management SaaS</h3>
+                    <p>Multi-tenant SaaS platform for laundry businesses. Features include order tracking, customer management, billing, and real-time dashboard analytics — built for scalability with tenant isolation.</p>
+                    <div class="project-tech">
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Livewire</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="project-badge laravel">Laravel 12+</div>
+                    <h3>Salon Booking Management</h3>
+                    <p>Appointment scheduling and booking system for salons. Handles service catalogs, staff scheduling, customer appointments, and payment processing with an intuitive booking interface.</p>
+                    <div class="project-tech">
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Filament</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <div class="project-badge laravel">Laravel 12+</div>
+                    <h3>PrintWise Management + HRIS</h3>
+                    <p>Comprehensive computer shop management system with integrated HRIS. Manages job orders, product categories, payments, employee records, payroll, and performance analytics.</p>
+                    <div class="project-tech">
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>Filament</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-badge flutter">Flutter</div>
+                    <h3>Laundry Management Offline</h3>
+                    <p>Offline-first mobile application for laundry businesses that works without internet connectivity. Features local data persistence, order management, and receipt generation — syncs when back online.</p>
+                    <div class="project-tech">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>SQLite</span>
+                        <span>Mobile</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span> Skills & Technologies
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4><i class="fas fa-code"></i> Languages & Frameworks</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PHP 7+</span>
+                        <span class="skill-tag">Laravel 12</span>
+                        <span class="skill-tag">CodeIgniter 3/4</span>
+                        <span class="skill-tag">CakePHP 2</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Dart</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4><i class="fas fa-database"></i> Databases & Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Filament PHP</span>
+                        <span class="skill-tag">Livewire</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4><i class="fas fa-cogs"></i> Practices & Architecture</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">CI/CD Pipelines</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">Multi-tenancy</span>
+                        <span class="skill-tag">Unit Testing</span>
+                        <span class="skill-tag">Code Refactoring</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4><i class="fas fa-users"></i> Soft Skills</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Mentoring</span>
+                        <span class="skill-tag">Cross-team Collaboration</span>
+                        <span class="skill-tag">Agile / Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">05.</span> Get in Touch
+            </h2>
+            <p class="section-subtitle">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+            <div class="contact-grid">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=renmarkalmojeracerdan@gmail.com" class="contact-card" target="_blank" rel="noopener">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>renmarkalmojeracerdan@gmail.com</p>
+                </a>
+                <a href="tel:+639626933541" class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p>+63 962 693 3541</p>
+                </a>
+                <a href="https://github.com/renmarkcerdan" class="contact-card" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                    <h4>GitHub</h4>
+                    <p>github.com/renmarkcerdan</p>
+                </a>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Location</h4>
+                    <p>Dagupan City, Pangasinan 2400</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & Built by <strong>Ren Mark Cerdan</strong></p>
+            <p class="footer-sub">&copy; 2024 – All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile nav on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .project-card, .skill-category, .contact-card, .detail-card, .about-text p').forEach(el => {
+            el.classList.add('animate-in');
+            observer.observe(el);
+        });
+    </script>
+</body>
 </html>

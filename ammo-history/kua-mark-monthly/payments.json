@@ -1,0 +1,33 @@
+{
+  "title": "Kua Mark Monthly",
+  "startDate": "2026-06-01",
+  "monthlyAmmo": 1550,
+  "totalMonths": 24,
+  "notes": "",
+  "payments": [
+    { "month": 1, "dueDate": "2026-06-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 2, "dueDate": "2026-07-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 3, "dueDate": "2026-08-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 4, "dueDate": "2026-09-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 5, "dueDate": "2026-10-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 6, "dueDate": "2026-11-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 7, "dueDate": "2026-12-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 8, "dueDate": "2027-01-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 9, "dueDate": "2027-02-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 10, "dueDate": "2027-03-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 11, "dueDate": "2027-04-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 12, "dueDate": "2027-05-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 13, "dueDate": "2027-06-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 14, "dueDate": "2027-07-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 15, "dueDate": "2027-08-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 16, "dueDate": "2027-09-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 17, "dueDate": "2027-10-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 18, "dueDate": "2027-11-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 19, "dueDate": "2027-12-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 20, "dueDate": "2028-01-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 21, "dueDate": "2028-02-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 22, "dueDate": "2028-03-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 23, "dueDate": "2028-04-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null },
+    { "month": 24, "dueDate": "2028-05-01", "amount": 1550, "paid": false, "paidDate": null, "paidAmount": null }
+  ]
+}

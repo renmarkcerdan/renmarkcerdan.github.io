@@ -1133,11 +1133,22 @@
 
         // ---- Admin / Password ----
         async function hashPassword(password) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(password);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            // Check if crypto.subtle is available (requires HTTPS or localhost)
+            if (crypto.subtle) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            } else {
+                // Fallback for insecure contexts (file:// or HTTP)
+                // Simple DJB2-like hash for compatibility
+                let hash = 5381;
+                for (let i = 0; i < password.length; i++) {
+                    hash = ((hash << 5) + hash) + password.charCodeAt(i);
+                }
+                return (hash >>> 0).toString(16).padStart(64, '0');
+            }
         }
 
         function openPasswordModal() {

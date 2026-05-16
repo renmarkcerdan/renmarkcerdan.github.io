@@ -909,7 +909,9 @@
 
     <script>
         // ---- Config ----
-        const PASS_HASH = 'f9c655065f99ac44e3e1cefc04c85ca4766cd5d8e93e9dcdceee1fe2a81e3985';
+        // SHA-256 hash (for HTTPS/localhost) and DJB2 fallback hash (for file:///HTTP)
+        const PASS_HASH_SHA256 = 'f9c655065f99ac44e3e1cefc04c85ca4766cd5d8e93e9dcdceee1fe2a81e3985';
+        const PASS_HASH_DJB2 = '000000000000000000000000000000000000000000000000000000006b3e2e31';
         let data = null;
         let isAdmin = false;
         let currentPayIndex = -1;
@@ -1166,7 +1168,7 @@
             const pass = document.getElementById('passwordInput').value;
             const hash = await hashPassword(pass);
 
-            if (hash === PASS_HASH) {
+            if (hash === PASS_HASH_SHA256 || hash === PASS_HASH_DJB2) {
                 isAdmin = true;
                 sessionStorage.setItem('ammo-admin', 'true');
                 document.body.classList.add('admin-mode');

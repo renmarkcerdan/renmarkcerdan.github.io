@@ -3,619 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ren Mark Cerdan Software Developer</title>
-    <meta name="description" content="Software Developer specializing in PHP, Laravel, and scalable web applications. Building robust solutions that drive real business value.">
+    <title>Ren Mark Cerdan — Software Developer</title>
+    <meta name="description" content="Software developer in Dagupan City, Philippines. I build the internal systems small businesses run on: payroll, point of sale, job orders, bookings. Laravel, PHP, Vue, Flutter.">
+    <meta name="color-scheme" content="light dark">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">&lt;RC /&gt;</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#ai-tools">AI Tools</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+<header class="masthead wrap">
+    <a href="#top" class="mark">Ren Mark Cerdan</a>
+    <nav>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#toolbox">Toolbox</a>
+        <a href="#contact">Contact</a>
     </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-bg-grid"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="status-dot"></span>
-                Available for opportunities
-            </div>
-            <h1 class="hero-title">
-                Hi, I'm <span class="gradient-text">Ren Mark</span>
-            </h1>
-            <p class="hero-subtitle">Software Developer</p>
-            <p class="hero-description">
-                Turning complex problems into simple, reliable code.<br>
-                Focused on scalable solutions with PHP, Laravel & Flutter.
+<main id="top">
+
+    <section class="intro wrap">
+        <div class="intro-text">
+            <p class="kicker">Software Developer · Dagupan City, PH</p>
+            <h1>I build the software small businesses actually run on&thinsp;— payroll, point of sale, job orders, bookings.</h1>
+            <p class="lede">
+                Ten years in, mostly PHP. By day I'm moving a legacy HRIS onto Laravel 12 at Dona Alejandra Inc.
+                After hours I build and ship systems for shops around Pangasinan, usually replacing a spreadsheet
+                or a notebook someone has outgrown.
             </p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-code"></i> View Projects
-                </a>
-                <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-paper-plane"></i> Get in Touch
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">8+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label">Projects Built</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">Side Projects</span>
-                </div>
-            </div>
+            <p class="links">
+                <a href="mailto:renmarkalmojeracerdan@gmail.com">renmarkalmojeracerdan@gmail.com</a>
+                <a href="https://github.com/renmarkcerdan" target="_blank" rel="noopener">GitHub</a>
+                <a href="tel:+639626933541">+63 962 693 3541</a>
+            </p>
         </div>
-        <div class="hero-avatar-wrapper">
-            <div class="avatar-glow"></div>
-            <img src="images/avatar.jpg" alt="Ren Mark Cerdan" class="hero-avatar">
-        </div>
+        <figure class="portrait">
+            <img src="images/avatar.jpg" alt="Portrait of Ren Mark Cerdan" width="240" height="240">
+        </figure>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">01.</span> About Me
-            </h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        As a passionate and versatile Software Developer, I specialize in building and optimizing robust web applications using 
-                        <strong>PHP</strong> (CodeIgniter 3/4, CakePHP 2, <strong>Laravel 12</strong>), JavaScript, jQuery, MySQL, HTML, and CSS. 
-                        I have hands-on experience with Git/GitHub, VS Code, and modern development practices that ensure clean, maintainable, and scalable code.
-                    </p>
-                    <p>
-                        Currently, I'm part of a development team leading the <strong>migration of a legacy HRIS to Laravel 12</strong>, 
-                        leveraging API integrations and a microservices architecture to improve scalability, performance, and maintainability. 
-                        My work focuses on transforming complex requirements into efficient, user-centered software solutions that drive measurable results.
-                    </p>
-                    <p>
-                        I believe great software isn't just about code it's about understanding people, solving problems, and continuously improving. 
-                        I'm always eager to learn new technologies, share ideas, and build solutions that make an impact.
-                    </p>
-                </div>
-                <div class="about-details">
-                    <div class="detail-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h4>Education</h4>
-                        <p class="detail-main">BS Information Technology</p>
-                        <p class="detail-sub">Colegio de Dagupan</p>
-                        <p class="detail-sub">2011 – 2015</p>
-                    </div>
-                    <div class="detail-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Location</h4>
-                        <p class="detail-main">Dagupan City</p>
-                        <p class="detail-sub">Pangasinan, Philippines</p>
-                        <p class="detail-sub">Willing to relocate</p>
-                    </div>
-                </div>
+    <section id="work" class="wrap">
+        <h2 class="section-head"><span>Selected work</span><small>Side projects, 2025–2026. Repos are private; walkthroughs on request.</small></h2>
+
+        <article class="project">
+            <div class="meta">
+                <p class="year">2026 · replacing a live system</p>
+                <p class="stack">Laravel 13 · Filament 5 · MySQL · Pest</p>
+                <p class="figure">220 commits<br>88 models · 229 routes</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">02.</span> Work Experience
-            </h2>
-            <div class="timeline">
-                <!-- Dona Alejandra -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot active"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div class="exp-info">
-                                <h3>Software Developer III</h3>
-                                <p class="exp-company">
-                                    <img src="images/thumbs/dai.svg" alt="DAI" class="company-logo">
-                                    Dona Alejandra Inc. Quezon City
-                                </p>
-                            </div>
-                            <span class="exp-date">
-                                <i class="fas fa-calendar"></i> Sep 2024 – Present
-                            </span>
-                        </div>
-                        <ul class="exp-list">
-                            <li>Led development and maintenance of the company's core HRIS platform using PHP 8, CakePHP, MySQL, jQuery, and JavaScript, delivering six major features that improved system performance by 25%.</li>
-                            <li>Spearheading the migration of the legacy HRIS to Laravel 12, leveraging API integrations and a microservices architecture to enhance scalability, security, and system flexibility.</li>
-                            <li>Collaborated with cross-functional teams (Project Manager, BA, QA) to translate complex requirements into scalable, maintainable solutions achieving zero critical post-release issues.</li>
-                            <li>Optimized and refactored legacy code, reducing average page load times by 30% and improving application responsiveness across multiple modules.</li>
-                            <li>Designed and implemented user-driven UI enhancements and workflow automations, cutting manual HR processing time by 40%.</li>
-                            <li>Mentored junior developers on CakePHP and modern PHP practices, improving code quality, consistency, and overall team velocity.</li>
-                            <li>Proactively adopted modern tools and technologies including automated testing frameworks and CI/CD pipelines resulting in a 50% reduction in system errors and faster deployment cycles.</li>
-                        </ul>
-                        <div class="exp-tags">
-                            <span class="tag">PHP 8</span>
-                            <span class="tag">CakePHP</span>
-                            <span class="tag">Laravel 12</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">jQuery</span>
-                            <span class="tag">CI/CD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BStech -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div class="exp-info">
-                                <h3>Web Developer</h3>
-                                <p class="exp-company">
-                                    <img src="images/thumbs/bstech.svg" alt="BStech" class="company-logo">
-                                    BStech Solutions Calasiao, Pangasinan
-                                </p>
-                            </div>
-                            <span class="exp-date">
-                                <i class="fas fa-calendar"></i> Oct 2019 – Sep 2024
-                            </span>
-                        </div>
-                        <ul class="exp-list">
-                            <li>Developed and maintained 10+ custom web-based systems using CodeIgniter, PHP, HTML4/5, CSS, and JavaScript, streamlining operations for clients across retail, logistics, and HR.</li>
-                            <li>Improved system performance by up to 35% through backend optimizations and front-end code refactoring.</li>
-                            <li>Reduced client-reported bugs by 40% year-over-year through proactive debugging and unit testing.</li>
-                            <li>Upgraded outdated UI components to responsive, modern layouts, resulting in a 25% increase in user satisfaction.</li>
-                            <li>Implemented version control with Git/GitHub to improve team collaboration and reduce deployment errors.</li>
-                            <li>Delivered projects 20% faster than initial estimates by automating repetitive tasks and optimizing workflows.</li>
-                        </ul>
-                        <div class="exp-tags">
-                            <span class="tag">CodeIgniter</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Git</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BStech Freelance -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div class="exp-info">
-                                <h3>Web Developer <span class="badge-freelance">Freelance</span></h3>
-                                <p class="exp-company">
-                                    <img src="images/thumbs/bstech.svg" alt="BStech" class="company-logo">
-                                    BStech Solutions Calasiao, Pangasinan
-                                </p>
-                            </div>
-                            <span class="exp-date">
-                                <i class="fas fa-calendar"></i> Oct 2018 – Oct 2019
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DTI -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div class="exp-info">
-                                <h3>Office Staff</h3>
-                                <p class="exp-company">
-                                    <img src="images/thumbs/dti.png" alt="DTI" class="company-logo">
-                                    Department of Trade and Industry Dagupan City
-                                </p>
-                            </div>
-                            <span class="exp-date">
-                                <i class="fas fa-calendar"></i> Oct 2017 – Feb 2019
-                            </span>
-                        </div>
-                        <ul class="exp-list">
-                            <li>Maintained and audited a centralized database of business names, ensuring 100% data accuracy.</li>
-                            <li>Processed business name registration and renewal applications, optimizing workflow for timely approvals.</li>
-                            <li>Designed professional seminar tarpaulins and marketing materials using Adobe Photoshop.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Honda -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div class="exp-info">
-                                <h3>Junior Programmer</h3>
-                                <p class="exp-company">
-                                    <img src="images/thumbs/honda.png" alt="Honda" class="company-logo">
-                                    Honda Cars Pangasinan Inc. Calasiao
-                                </p>
-                            </div>
-                            <span class="exp-date">
-                                <i class="fas fa-calendar"></i> Feb 2016 – Oct 2016
-                            </span>
-                        </div>
-                        <ul class="exp-list">
-                            <li>Upgraded and maintained the company's internal Accounting Information System using PowerBuilder and SQL, reducing monthly reporting errors by 30%.</li>
-                            <li>Optimized database queries and application logic, reducing system lag and boosting efficiency.</li>
-                            <li>Streamlined data handling processes, resulting in a 20% decrease in processing time for financial transactions.</li>
-                        </ul>
-                        <div class="exp-tags">
-                            <span class="tag">PowerBuilder</span>
-                            <span class="tag">SQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PSA -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div class="exp-info">
-                                <h3>Team Supervisor</h3>
-                                <p class="exp-company">
-                                    <img src="images/thumbs/psa.png" alt="PSA" class="company-logo">
-                                    Philippine Statistics Authority Calasiao
-                                </p>
-                            </div>
-                            <span class="exp-date">
-                                <i class="fas fa-calendar"></i> Aug 2015 – Oct 2015
-                            </span>
-                        </div>
-                        <ul class="exp-list">
-                            <li>Supervised a team of 12 enumerators during the 2015 POPCEN, ensuring 100% coverage and data accuracy.</li>
-                            <li>Achieved 100% on-time submission of field reports through effective scheduling and daily progress monitoring.</li>
-                            <li>Conducted spot-checks and quality reviews, reducing data discrepancies by 35%.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- DSWD -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div class="exp-info">
-                                <h3>Enumerator</h3>
-                                <p class="exp-company">
-                                    <img src="images/thumbs/dswd.png" alt="DSWD" class="company-logo">
-                                    Department of Social Welfare and Development San Fernando
-                                </p>
-                            </div>
-                            <span class="exp-date">
-                                <i class="fas fa-calendar"></i> May 2015 – Jul 2015
-                            </span>
-                        </div>
-                        <ul class="exp-list">
-                            <li>Conducted detailed household interviews using the Listahanan software, collecting data from over 300 families.</li>
-                            <li>Ensured 99% data accuracy by cross-verifying entries and resolving inconsistencies on-site.</li>
-                            <li>Streamlined data encoding, reducing reporting time by 20%.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Side Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">03.</span> Side Projects
-            </h2>
-            <p class="section-subtitle">Personal projects I've built to explore new technologies and solve real-world problems.</p>
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <div class="project-badge laravel">Laravel 12+</div>
-                    <h3>Laundry Management SaaS</h3>
-                    <p>Multi-tenant SaaS platform for laundry businesses. Features include order tracking, customer management, billing, and real-time dashboard analytics built for scalability with tenant isolation.</p>
-                    <div class="project-tech">
-                        <span>PHP</span>
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>Livewire</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <div class="project-badge laravel">Laravel 12+</div>
-                    <h3>Salon Booking Management</h3>
-                    <p>Appointment scheduling and booking system for salons. Handles service catalogs, staff scheduling, customer appointments, and payment processing with an intuitive booking interface.</p>
-                    <div class="project-tech">
-                        <span>PHP</span>
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>Filament</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <div class="project-badge laravel">Laravel 12+</div>
-                    <h3>PrintWise Management + HRIS</h3>
-                    <p>Comprehensive computer shop management system with integrated HRIS. Manages job orders, product categories, payments, employee records, payroll, and performance analytics.</p>
-                    <div class="project-tech">
-                        <span>PHP</span>
-                        <span>Laravel</span>
-                        <span>Filament</span>
-                        <span>MySQL</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-badge flutter">Flutter</div>
-                    <h3>Laundry Management Offline</h3>
-                    <p>Offline-first mobile application for laundry businesses that works without internet connectivity. Features local data persistence, order management, and receipt generation syncs when back online.</p>
-                    <div class="project-tech">
-                        <span>Flutter</span>
-                        <span>Dart</span>
-                        <span>SQLite</span>
-                        <span>Mobile</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">04.</span> Skills & Technologies
-            </h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4><i class="fas fa-code"></i> Languages & Frameworks</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PHP 7+</span>
-                        <span class="skill-tag">Laravel 12</span>
-                        <span class="skill-tag">CodeIgniter 3/4</span>
-                        <span class="skill-tag">CakePHP 2</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">jQuery</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">Dart</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4><i class="fas fa-database"></i> Databases & Tools</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">SQLite</span>
-                        <span class="skill-tag">Git / GitHub</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">Filament PHP</span>
-                        <span class="skill-tag">Livewire</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4><i class="fas fa-cogs"></i> Practices & Architecture</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Microservices</span>
-                        <span class="skill-tag">CI/CD Pipelines</span>
-                        <span class="skill-tag">API Integration</span>
-                        <span class="skill-tag">Multi-tenancy</span>
-                        <span class="skill-tag">Unit Testing</span>
-                        <span class="skill-tag">Code Refactoring</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4><i class="fas fa-users"></i> Soft Skills</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Team Leadership</span>
-                        <span class="skill-tag">Mentoring</span>
-                        <span class="skill-tag">Cross-team Collaboration</span>
-                        <span class="skill-tag">Agile / Scrum</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Tools Section -->
-    <section id="ai-tools" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">05.</span> AI-Assisted Development Stack
-            </h2>
-            <p class="section-subtitle">I leverage a structured AI workflow to ship faster, think deeper, and maintain code quality at scale.</p>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4><i class="fas fa-terminal"></i> Core AI Coding Tools</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">OpenCode (CLI Agent)</span>
-                        <span class="skill-tag">Windsurf IDE</span>
-                        <span class="skill-tag">Codex</span>
-                        <span class="skill-tag">Claude (Anthropic)</span>
-                        <span class="skill-tag">DeepSeek V3</span>
-                        <span class="skill-tag">Gemini Flash</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4><i class="fas fa-brain"></i> Model Strategy</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Big Pickle Building</span>
-                        <span class="skill-tag">DeepSeek V4 Flash Planning</span>
-                        <span class="skill-tag">Planner / Builder Split</span>
-                        <span class="skill-tag">Token Efficiency Rules</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4><i class="fas fa-plug"></i> MCP Services</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">mcp-memory-service</span>
-                        <span class="skill-tag">sequential-thinking</span>
-                        <span class="skill-tag">Graphify</span>
-                        <span class="skill-tag">Headroom</span>
-                        <span class="skill-tag">Ponytail</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4><i class="fas fa-project-diagram"></i> Workflow & Tooling</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GitNexus</span>
-                        <span class="skill-tag">Superpowers</span>
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">AI Conductor Pattern</span>
-                        <span class="skill-tag">Context Management</span>
-                    </div>
-                </div>
-            </div>
-            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; border-left: 3px solid var(--accent);">
-                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin: 0;">
-                    My workflow follows a <strong style="color: var(--text-primary);">conductor model</strong> I act as the technical lead issuing structured directives to AI coding agents (OpenCode, Windsurf), while using Claude for architectural guidance and prompt engineering.
-                    This keeps me in control of quality while dramatically accelerating delivery.
+            <div class="body">
+                <h3>PrintWise — shop operations &amp; HRIS</h3>
+                <p>
+                    A print and computer shop was running everything — job orders, payments, payroll, time
+                    records — through one CodeIgniter 3 controller with 393 methods. I'm rebuilding it as a
+                    Filament admin on Laravel 13, module by module, with an import command that moves the
+                    old data table by table so both can run side by side.
                 </p>
+                <ul>
+                    <li>Job order → production queue, with a queue display board and a public page where customers track their own orders.</li>
+                    <li>Batch payroll with SSS, PhilHealth, Pag-IBIG and withholding tables, run per employee inside DB transactions.</li>
+                    <li>RFID time-clock kiosk, receipt number ranges, statements of account, customer loyalty tiers.</li>
+                    <li>Per-feature permission registry with presets and an audit log; an in-app assistant that can look up payments and reprint job orders.</li>
+                </ul>
+                <figure class="shot">
+                    <img src="images/work/printwise.webp" alt="Live production monitor: job order cards moving through cashier, layout, production and releasing, with progress, elapsed time, assigned staff and balance" width="1600" height="1000" loading="lazy">
+                    <figcaption>Live production monitor · sample data</figcaption>
+                </figure>
             </div>
-        </div>
+        </article>
+
+        <article class="project">
+            <div class="meta">
+                <p class="year">2026</p>
+                <p class="stack">Laravel 11 · Inertia · Vue 3 (TS) · Reverb</p>
+                <p class="figure">259 tests passing<br>134 routes</p>
+            </div>
+            <div class="body">
+                <h3>POS &amp; multi-branch inventory</h3>
+                <p>
+                    Point of sale and stock control for a computer-parts retailer with several branches.
+                    Every sale, void and stock movement is broadcast over WebSockets, so a branch manager
+                    sees the counter in another city change as it happens.
+                </p>
+                <ul>
+                    <li>Barcode/SKU checkout with check payments, service lines, receipts and voids.</li>
+                    <li>Per-branch stock ledger, inter-branch transfers, reorder suggestions and low-stock alerts.</li>
+                    <li>Purchasing: suppliers, purchase orders, supplier invoices, returns.</li>
+                    <li>Cashier shifts and remittances, repair tickets, quotations, price changes that need approval.</li>
+                </ul>
+                <figure class="shot">
+                    <img src="images/work/pos.webp" alt="Walk-in sale screen: product search with branch stock on the left, a four-item cart and cash, card, GCash and check payment options on the right" width="1600" height="1000" loading="lazy">
+                    <figcaption>Checkout, mid-sale · sample data</figcaption>
+                </figure>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="meta">
+                <p class="year">2026</p>
+                <p class="stack">Laravel 12 · stancl/tenancy · Flutter · SQLite</p>
+                <p class="figure">Web + Android<br>tenant-scoped data</p>
+            </div>
+            <div class="body">
+                <h3>Launderly — laundry shop SaaS, plus an offline app</h3>
+                <p>
+                    A multi-tenant system for laundry shops: each shop's data is kept separate, and new
+                    shops are set up on sign-up. Some shops have no reliable internet, so there is also a
+                    Flutter version that keeps the whole shop on the phone.
+                </p>
+                <ul>
+                    <li>Orders, customers, pricing, deliveries, inventory with stock rules, expenses, printable receipts.</li>
+                    <li>Super-admin console for tenants, subscriptions and manual payments.</li>
+                    <li>Affiliate program with its own portal, lead capture, referrals and commission tracking.</li>
+                    <li>Android app: fully offline on SQLite, backup and restore through the share sheet, SMS/WhatsApp hand-off to customers.</li>
+                </ul>
+                <figure class="shot pair">
+                    <img src="images/work/launderly.webp" alt="Orders screen: counts by status and a table of orders with customer, status, total, received time and hand-off actions" width="1600" height="1000" loading="lazy">
+                    <img src="images/work/launderly-app.webp" alt="Flutter offline app on a phone: daily overview with revenue and net profit cards and a bottom tab bar" width="450" height="974" loading="lazy">
+                    <figcaption>Web orders board and the offline Android app · sample data</figcaption>
+                </figure>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="meta">
+                <p class="year">2026</p>
+                <p class="stack">Laravel 13 · Jetstream · Vue 3 · Chart.js</p>
+                <p class="figure">34 tests passing<br>money in centavos</p>
+            </div>
+            <div class="body">
+                <h3>KasAMA — household expenses for two</h3>
+                <p>
+                    A shared budget for couples. Both people see the same grocery list and the same bills,
+                    and ticking items off the list at the store turns them into expenses.
+                </p>
+                <ul>
+                    <li>Households isolated from each other; the second member joins by invite link.</li>
+                    <li>Recurring bills with mark-paid and skip, monthly category budgets, copy-last-month.</li>
+                    <li>Reports with charts and CSV export. Logic in action classes; amounts stored as integers.</li>
+                </ul>
+                <figure class="shot">
+                    <img src="images/work/kasama.webp" alt="Monthly report: six-month spending trend line, category bar chart, groceries versus non-groceries donut and totals" width="1600" height="1000" loading="lazy">
+                    <figcaption>Monthly report · sample data</figcaption>
+                </figure>
+            </div>
+        </article>
+
+        <h3 class="subhead">Also built</h3>
+        <dl class="also">
+            <div>
+                <dt>Payroll &amp; attendance</dt>
+                <dd>Time-clock kiosk, weekly pay with night differential and overtime rules, recurring deductions, PDF payslips, and an employee store charged against salary. <span>Laravel 12 · Blade · 101 tests</span></dd>
+            </div>
+            <div>
+                <dt>Salon management</dt>
+                <dd>POS for services and products, a walk-in queue that rotates stylists, commission payroll, stock ledger, and public booking with email reminders. <span>Laravel 10 · Inertia · Vue 3</span></dd>
+            </div>
+            <div>
+                <dt>Jungle Gym bookings</dt>
+                <dd>Package and time-slot booking for a kids' play centre, Google sign-in, a chat assistant and an admin that drafts promos and review replies with Gemini. <span>Laravel 12 · Vue 3 · Gemini API</span></dd>
+            </div>
+            <div>
+                <dt>QA-KO <em>prototype</em></dt>
+                <dd>Paste a URL; a Playwright sidecar probes forms, navigation, accessibility and console errors, and an LLM of your choice sorts the findings by severity. <span>Laravel · Node · Playwright · Docker</span></dd>
+            </div>
+        </dl>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">06.</span> Get in Touch
-            </h2>
-            <p class="section-subtitle">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
-            <div class="contact-grid">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=renmarkalmojeracerdan@gmail.com" class="contact-card" target="_blank" rel="noopener">
-                    <i class="fas fa-envelope"></i>
-                    <h4>Email</h4>
-                    <p>renmarkalmojeracerdan@gmail.com</p>
-                </a>
-                <a href="tel:+639626933541" class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Phone</h4>
-                    <p>+63 962 693 3541</p>
-                </a>
-                <a href="https://github.com/renmarkcerdan" class="contact-card" target="_blank" rel="noopener">
-                    <i class="fab fa-github"></i>
-                    <h4>GitHub</h4>
-                    <p>github.com/renmarkcerdan</p>
-                </a>
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h4>Location</h4>
-                    <p>Dagupan City, Pangasinan 2400</p>
-                </div>
+    <section id="experience" class="wrap">
+        <h2 class="section-head"><span>Experience</span></h2>
+
+        <article class="job">
+            <p class="when">2024 — now</p>
+            <div>
+                <h3>Software Developer III <span>Dona Alejandra Inc., Quezon City</span></h3>
+                <ul>
+                    <li>Lead development on the company HRIS (PHP 8, CakePHP, MySQL, jQuery); shipped six major features.</li>
+                    <li>Leading the migration of the legacy HRIS to Laravel 12, split into API-backed services.</li>
+                    <li>Refactored legacy modules, cutting average page load by about 30%.</li>
+                    <li>Built workflow automations that took roughly 40% off manual HR processing time.</li>
+                    <li>Work with PM, BA and QA on requirements; mentor junior developers on CakePHP and modern PHP.</li>
+                </ul>
             </div>
-        </div>
+        </article>
+
+        <article class="job">
+            <p class="when">2018 — 2024</p>
+            <div>
+                <h3>Web Developer <span>BStech Solutions, Calasiao</span></h3>
+                <ul>
+                    <li>Built and maintained 10+ custom systems for retail, logistics and HR clients in CodeIgniter and PHP.</li>
+                    <li>Backend and front-end optimisation work, up to 35% faster on the slowest systems.</li>
+                    <li>Moved the team onto Git and GitHub; rebuilt old UIs as responsive layouts.</li>
+                    <li>Freelance for the first year (2018–2019), full-time from October 2019.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="job">
+            <p class="when">2016</p>
+            <div>
+                <h3>Junior Programmer <span>Honda Cars Pangasinan, Calasiao</span></h3>
+                <ul>
+                    <li>Maintained the internal accounting system in PowerBuilder and SQL; tuned queries behind the monthly reports.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="job compact">
+            <p class="when">2015 — 2019</p>
+            <div>
+                <h3>Before software</h3>
+                <p>Office staff at DTI Dagupan (business name registry), team supervisor for the 2015 PSA census, and a DSWD Listahanan enumerator. Good training in how records really get filled in.</p>
+            </div>
+        </article>
+
+        <article class="job compact">
+            <p class="when">2011 — 2015</p>
+            <div>
+                <h3>BS Information Technology <span>Colegio de Dagupan</span></h3>
+            </div>
+        </article>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>Designed & Built by <strong>Ren Mark Cerdan</strong></p>
-            <p class="footer-sub">&copy; 2025 – All rights reserved</p>
-        </div>
-    </footer>
+    <section id="toolbox" class="wrap">
+        <h2 class="section-head"><span>Toolbox</span></h2>
+        <dl class="tools">
+            <div><dt>Daily</dt><dd>PHP 8, Laravel, MySQL, JavaScript, Git</dd></div>
+            <div><dt>Also shipped with</dt><dd>Filament, Livewire, Inertia + Vue 3, Tailwind, Reverb, Pest, CakePHP, CodeIgniter</dd></div>
+            <div><dt>Mobile</dt><dd>Flutter, Dart, SQLite</dd></div>
+            <div><dt>Older</dt><dd>PowerBuilder, jQuery-era everything</dd></div>
+        </dl>
+        <p class="note">
+            <strong>On AI tools.</strong> I use Claude Code, OpenCode and Windsurf daily, with code-graph
+            indexing (GitNexus, Graphify) so the agent reads the real call graph instead of guessing.
+            I plan and review; the agent types. Every change still gets run and checked in a browser
+            before it goes out.
+        </p>
+    </section>
 
-    <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
+    <section id="contact" class="wrap contact">
+        <h2 class="section-head"><span>Contact</span></h2>
+        <p>Open to full-time roles, remote or on-site, and to small business projects.</p>
+        <p class="big"><a href="mailto:renmarkalmojeracerdan@gmail.com">renmarkalmojeracerdan@gmail.com</a></p>
+        <p class="links">
+            <a href="tel:+639626933541">+63 962 693 3541</a>
+            <a href="https://github.com/renmarkcerdan" target="_blank" rel="noopener">github.com/renmarkcerdan</a>
+            <span>Dagupan City, Pangasinan · willing to relocate</span>
+        </p>
+    </section>
 
-        // Mobile nav toggle
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
+</main>
 
-        // Close mobile nav on link click
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
-        });
+<footer class="wrap footer">
+    <p>© 2026 Ren Mark Cerdan.</p>
+</footer>
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.timeline-item, .project-card, .skill-category, .contact-card, .detail-card, .about-text p').forEach(el => {
-            el.classList.add('animate-in');
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>

@@ -46,7 +46,33 @@
     </section>
 
     <section id="work" class="wrap">
-        <h2 class="section-head"><span>Selected work</span><small>Side projects, 2025–2026. Repos are private; walkthroughs on request.</small></h2>
+        <h2 class="section-head"><span>Selected work</span><small>Client and side projects, 2025–2026. Repos are private; walkthroughs on request.</small></h2>
+
+        <article class="project">
+            <div class="meta">
+                <p class="year">2025–2026 · in production</p>
+                <p class="stack">Laravel 12 · Blade · Tailwind · MySQL</p>
+                <p class="figure">50+ employees paid weekly<br>101 tests · 193 commits</p>
+            </div>
+            <div class="body">
+                <h3>Payroll &amp; attendance — Double O Muffler Fabrication</h3>
+                <p>
+                    Built for a muffler fabrication shop and running their weekly payroll since early 2026.
+                    Staff clock in at a kiosk with an RFID card or PIN, and each week's hours, overtime,
+                    income and deductions become a payslip in one run.
+                </p>
+                <ul>
+                    <li>Hours rules in one place: lunch deducted automatically, configurable dinner breaks, overnight shifts rolled to the next day, OT from separate punches or anything past eight hours.</li>
+                    <li>Weekly run inside a single DB transaction: applies recurring loan deductions, fills in pay for time-log-exempt and piece-rate staff, then nets out board and lodging and unpaid store purchases.</li>
+                    <li>Employee store with its own stock ledger; purchases before the Saturday 5 PM cutoff come off that week's pay.</li>
+                    <li>Around 40 service classes behind thin controllers; per-module permissions, audit trail, PDF payslips, hashed kiosk PINs.</li>
+                </ul>
+                <figure class="shot">
+                    <img src="images/work/payroll.webp" alt="Weekly salary dashboard: one pay week's employees with hours, overtime, gross, income, deductions in red and net pay in green" width="1600" height="1000" loading="lazy">
+                    <figcaption>Weekly payroll run · sample data, not the client's</figcaption>
+                </figure>
+            </div>
+        </article>
 
         <article class="project">
             <div class="meta">
@@ -154,10 +180,6 @@
 
         <h3 class="subhead">Also built</h3>
         <dl class="also">
-            <div>
-                <dt>Payroll &amp; attendance</dt>
-                <dd>Time-clock kiosk, weekly pay with night differential and overtime rules, recurring deductions, PDF payslips, and an employee store charged against salary. <span>Laravel 12 · Blade · 101 tests</span></dd>
-            </div>
             <div>
                 <dt>Salon management</dt>
                 <dd>POS for services and products, a walk-in queue that rotates stylists, commission payroll, stock ledger, and public booking with email reminders. <span>Laravel 10 · Inertia · Vue 3</span></dd>
